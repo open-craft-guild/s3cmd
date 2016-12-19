@@ -65,7 +65,11 @@ setup(
     name = S3.PkgInfo.package,
     version = S3.PkgInfo.version,
     packages = [ 'S3' ],
-    scripts = ['s3cmd'],
+    entry_points = {
+        'console_scripts': [
+            's3cmd = S3.__main__:main_wrapper',
+        ],
+    },
     data_files = data_files,
 
     ## Packaging details

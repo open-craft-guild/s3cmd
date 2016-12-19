@@ -2932,7 +2932,7 @@ def report_exception(e, msg=u''):
 
         sys.stderr.write(alert_header % (u"above lines", u""))
 
-if __name__ == '__main__':
+def main_wrapper():
     try:
         ## Our modules
         ## Keep them in try/except block to
@@ -3041,5 +3041,8 @@ invoking s3cmd.
     except Exception, e:
         report_exception(e)
         sys.exit(EX_GENERAL)
+
+if __name__ == '__main__':
+    main_wrapper()
 
 # vim:et:ts=4:sts=4:ai
